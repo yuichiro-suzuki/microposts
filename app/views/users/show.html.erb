@@ -1,18 +1,42 @@
+
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <div class="panel panel-info">
+        <div class="panel-heading"><%= f.label :name %></div>
+         <div class="panel-body">
+           <p class="form-control-static"> <%= @user.name %></p>
+         </div>
+    　</div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading"><%= f.label :email %></div>
+         <div class="panel-body">
+           <p class="form-control-static"> <%= @user.email %></p>
+         </div>
+    　</div>
+      
+      <div class="panel panel-info">
+        <div class="panel-heading"><%= f.label :age %></div>
+         <div class="panel-body">
+           <p class="form-control-static"> <%= @user.age %></p>
+         </div>
+    　</div>
+      
+      <div class="panel panel-info">
+        <div class="panel-heading"><%= f.label :area %></div>
+         <div class="panel-body">
+           <p class="form-control-static"> <%= @user.area %></p>
+         </div>
+    　</div>
+    　
     <% end %>
   </div>
 </div>
+
