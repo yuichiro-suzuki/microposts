@@ -45,8 +45,7 @@ class UsersController < ApplicationController
   def collect_user
     user = User.find(params[:id])
     if user != current_user 
-      redirect_to(root_url)
-    notice:"認証に失敗しました"
+      redirect_to root_url  , notice:"認証に失敗しました"
     end
   end
 end
