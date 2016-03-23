@@ -1,4 +1,4 @@
-class Favolite < ActiveRecord::Base
+class Favorite < ActiveRecord::Base
   belongs_to :user
   belongs_to :micropost
 end
