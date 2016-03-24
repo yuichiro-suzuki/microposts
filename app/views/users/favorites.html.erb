@@ -8,8 +8,7 @@
      <ol class="content"><%= favorite.content %></ol>
      <ol class="timestamp">
         Posted <%= time_ago_in_words(favorite.created_at) %> ago.
-        <% if current_user == favorite.user %>
-        <%= link_to "delete", micropost, method: :delete,data: { confirm: "You sure?" } %></ol>
+        <% if current_user == favorite.user %></ol>
     <% end %>
     <br><br>
     </ul>
