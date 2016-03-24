@@ -49,6 +49,13 @@ class UsersController < ApplicationController
     @users = @user.follower_users
     render 'show_follow'
   end
+  
+  def favorites
+    @user = User.find(params[:id])
+    @favorites = @user.added_favorites.order(created_at: :desc)
+    render 'favorites'
+  end
+  
   private
 
   def user_params
