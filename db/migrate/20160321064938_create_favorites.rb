@@ -1,6 +1,6 @@
-class CreateFavolites < ActiveRecord::Migration
+class CreateFavorites < ActiveRecord::Migration
   def change
-    create_table :favolites do |t|
+    create_table :favorites do |t|
       t.references :user, index: true
       t.references :micropost, index: true
 
