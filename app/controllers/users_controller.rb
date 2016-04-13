@@ -56,6 +56,8 @@ class UsersController < ApplicationController
     render 'favorites'
   end
   
+  
+  
   private
 
   def user_params

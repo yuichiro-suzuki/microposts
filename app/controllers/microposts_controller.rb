@@ -20,6 +20,9 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
   
+  def home
+    @microposts = Micropost.page(params[:page])
+  end
   
   private
   
